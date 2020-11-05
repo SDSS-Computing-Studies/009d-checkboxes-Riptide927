@@ -25,8 +25,8 @@ def updateCheck():
 cb = Checkbutton(win, text="This is a checkbutton", variable = state, command=updateCheck)
 
 # creates an entry widget and then sets the initial value
-e1 = Entry(win)
-e1.insert(0,state.get())
+e1 = Enrty(win)
+e1.(insert0,state.get())
 
 cb.pack()
 e1.pack()

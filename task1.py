@@ -18,7 +18,7 @@ Use assignment_test.py to test your functions
 
 
 import tkinter as tk 
-
+from tkinter import *
 
 
 def binary_to_decimal(binary):
@@ -39,7 +39,10 @@ def get_binary():
     # function should read the entry widget and generate an integer
     # this integer will be used as an input parameter for decimal to binary and the result updated
     # in the 8 checkboxes
-
+    binary=[]
+    for x in range(8):
+        binary.append(cb[x].get())
+        
     binary = binary_to_decimal(decimal)
 
 
@@ -54,10 +57,29 @@ def get_decimal():
 
 win = tk.Tk()
 
+cb=[]
 
+state = IntVar()
+state.set(0)
 
-b1 = Button(win, text="Convert to Binary", command=get_binary)
-b2 = Button(win, text="Convert to Decimal", command=get_decimal)
+buttonf = Frame()
+checkf = Frame()
+label1 = Label(text= "Binary/Decimal Converter")
+b1 = Button(master= buttonf, text="Convert to Binary", )#command=get_binary)
+b2 = Button(master = buttonf, text="Convert to Decimal",) #command=get_decimal)
+entry = Entry(width = 20)
+
+for x in range(8):
+    cb.append(Checkbutton(master=checkf))
+
+label1.pack()
+checkf.pack()
+buttonf.pack()
+for x in range(8):
+    cb[x].pack(side=LEFT)
+b1.pack(side = LEFT)
+b2.pack(side = LEFT)
+entry.pack()
 
 
 
